@@ -2,12 +2,13 @@
 //
 
 #include "MDI_CAILLEAU_MARIE.h"
+#include "../dependencies/termcolor/include/termcolor/termcolor.hpp"
 
 using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+	termcolor::yellow(std::cout) << "Hello CMake." << endl;
 	
 
 
