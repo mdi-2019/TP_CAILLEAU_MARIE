@@ -8,10 +8,11 @@ using namespace std;
 
 int main()
 {
-	termcolor::yellow(std::cout) << "Hello CMake." << endl;
-	
-
-
+	int a, b;
+	std::cin >> a;
+	std::cout << "+";
+	std::cin >> b;
+	std::cout << "=" << a + b;
 	while (1) {}
 	return 0;
 }
