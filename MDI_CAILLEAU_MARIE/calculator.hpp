@@ -18,7 +18,7 @@ protected:
 
 	bool is_digit(char c)const
 	{
-		return c >= '0' && c <= '9' || c == ';';
+		return c >= '0' && c <= '9' || c == '.';
 	}
 
 
