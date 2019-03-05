@@ -3,6 +3,8 @@
 #include <string>
 #include <functional>
 #include <map>
+#include <cmath>
+
 class Calculator
 {
 protected:
