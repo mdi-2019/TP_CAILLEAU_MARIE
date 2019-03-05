@@ -97,7 +97,8 @@ public:
 		operations.insert(std::pair<std::string, binary_operation>("-", std::minus<double>()));
 		operations.insert(std::pair<std::string, binary_operation>("*", std::multiplies<double>()));
 		operations.insert(std::pair<std::string, binary_operation>("/", std::divides<double>()));
+		operations.insert(std::pair<std::string, binary_operation>("^", [](double a, double b) {return std::pow(a, b); }));
 	}
-	
+
 
 };
