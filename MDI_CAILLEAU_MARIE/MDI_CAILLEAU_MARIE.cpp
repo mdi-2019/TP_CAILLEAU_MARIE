@@ -3,16 +3,26 @@
 
 #include "MDI_CAILLEAU_MARIE.h"
 #include "../dependencies/termcolor/include/termcolor/termcolor.hpp"
-
+#include "calculator.hpp"
 using namespace std;
+
+
+
+
+
 
 int main()
 {
-	int a, b;
-	std::cin >> a;
-	std::cout << "+";
-	std::cin >> b;
-	std::cout << "=" << a + b;
-	while (1) {}
+	Calculator calc;
+	calc.__init();
+
+	while (1) 
+	{
+		std::string line;
+		getline(std::cin, line);
+		std::cout << calc.compute(line) << std::endl;
+	}
+
+	
 	return 0;
 }
