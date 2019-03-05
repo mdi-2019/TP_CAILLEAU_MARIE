@@ -8,7 +8,7 @@ using namespace std;
 
 int get_mode()
 {
-	std::cout << "Please choose the mod (0:add | 1:sub | 2:mul | 3:div)"<<std::endl;
+	std::cout << "Please choose the mod (0:add | 1:sub | 2:mul | 3:div)" << std::endl;
 	int mode;
 	std::cin >> mode;
 	return mode;
@@ -33,7 +33,7 @@ float calculate()
 		std::cin >> a;
 		std::cin >> b;
 		res = a - b;
-		std::cout << a << " + " << b << " = " << res << std::endl;
+		std::cout << a << " - " << b << " = " << res << std::endl;
 		return res;
 	}
 	else if(mode == 2)
@@ -42,7 +42,7 @@ float calculate()
 		std::cin >> a;
 		std::cin >> b;
 		res = a * b;
-		std::cout << a << " + " << b << " = " << res << std::endl;
+		std::cout << a << " * " << b << " = " << res << std::endl;
 		return res;
 	}
 	else if(mode == 3)
@@ -51,7 +51,7 @@ float calculate()
 		std::cin >> a;
 		std::cin >> b;
 		res = a / b;
-		std::cout << a << " + " << b << " = " << res << std::endl;
+		std::cout << a << " / " << b << " = " << res << std::endl;
 		return res;
 	}
 	else
