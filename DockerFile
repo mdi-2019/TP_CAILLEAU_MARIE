@@ -1,0 +1,21 @@
+FROM ubuntu
+RUN cd usr/src
+RUN apt-get update
+RUN apt-get install -y net-tools
+RUN apt-get install -y git g++ ant software-properties-common cmake maven openjdk-8-jdk
+RUN add-apt-repository -y ppa:webupd8team/java && apt-get updte && apt-get install -y oracle-java8-installer junit java-wrappers
+RUN git clone https://github.com/barais/ESIRTPDockerSampleApp
+RUN git clone https://github.com/Itseez/opencv.git
+RUN cd opencv
+RUN git checkout -b 2.4 origin/2.4
+RUN mkdir build
+RUN cd build
+RUN cmake -D BUILD_SHARED_LIBS=OFF ..
+RUN make -j8
+RUN cd ..
+RUN cd..
+RUN cd ./ESIRTPDockerSampleApp/
+RUN mv TrollFace-2.jpg trollface.jpg
+RUN cp trollface.jpg src/main
+RUN mvn install:install-file -Dfile=/usr/src/opencv/build/bin/opencv-346.jar -DgroupId=org.opencv -DartifactId=opencv -Dversion=3.4.6 -Dpackaging=jar
+RUN java -Djava.library.path=/usr/src/opencv/build/lib/ -jar target/fatjar-0.0.1-SNAPSHOT.jar
